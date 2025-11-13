@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+
+    <!-- Display validation messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li style="color:red;">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Contact Form -->
+    <form action="/submit" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ session.get('name', '') }}"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="{{ session.get('email', '') }}"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50">{{ session.get('message', '') }}</textarea><br><br>
+
+
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
