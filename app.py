@@ -30,6 +30,27 @@ def submit_form():
     name = request.form['name']
     country = request.form['country']
     age = request.form['age']
+    email = request.form['email']
+    gender = request.form['gender']
+    phone = request.form['phone']
+
+    if not name:
+        flash('Please enter your first name.')
+    elif not country:
+        flash('Please enter your country.')
+    elif not age:
+        flash('Please enter your age.')
+    elif not email:
+        flash('Please enter your email.')
+    elif not gender:
+        flash('Please enter your gender.')
+    elif not phone:
+        flash('Please enter your phone.')
+    else:
+        flash('These fields are required!')
+
+
+
 
     # Check if file exists
     if os.path.exists('registrations.json'):
@@ -39,12 +60,13 @@ def submit_form():
         data = []
 
     # Add the new registration
-    data.append({'name': name, 'country': country, 'age': age})
+    data.append({'name': name, 'country': country, 'age': age, 'email': email, 'gender': gender, 'phone': phone})
 
     # Save all registrations back to the file
     with open('registrations.json', 'w') as file:
         json.dump(data, file, indent=2)
 
+    flash('Registration submitted successfully!')
     return redirect(url_for('index'))
 
 

@@ -7,12 +7,19 @@
       <th>Name</th>
       <th>Country</th>
       <th>Age</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Gender</th>
+
     </tr>
     {% for person in registrations %}
       <tr>
         <td>{{ person.name }}</td>
         <td>{{ person.country }}</td>
         <td>{{ person.age }}</td>
+          <td>{{ person.email }}</td>
+          <td>{{ person.gender }}</td>
+          <td>{{ person.phone }}</td>
       </tr>
     {% endfor %}
   </table>
