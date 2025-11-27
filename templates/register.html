@@ -14,8 +14,14 @@
         {% endif %}
     {% endwith %}
 
-    <p><input type="text" name="name" placeholder="Full name" required></p>
-    <select class="form-select" autocomplete="country" id="country" name="country">
+   <label for="name">Full name:</label>
+    <input type="text" id="name" name="name" placeholder="Full name:" style="width: 450px; height: 20px; font-size: 14px">
+
+    <p></p>
+
+     <label for="country">Country of Origin:</label>
+
+    <select class="form-select" autocomplete="country" id="country" name="country" style="width: 250px; height: 30px; font-size: 14px">
     <option>select country</option>
     <option value="AF">Afghanistan</option>
     <option value="AX">Åland Islands</option>
@@ -270,7 +276,9 @@
     <option value="ZM">Zambia</option>
     <option value="ZW">Zimbabwe</option>
 </select>
-   <p><select class="form-select" id="year" name="year">
+    <p></p>
+   <label for="year">Date of Birth:</label>
+   <p><select class="form-select" id="year" name="year" style="width: 80px; height: 30px; font-size: 14px">
     <option>year</option>
     <option value="2025">2025</option>
     <option value="2024">2024</option>
@@ -359,7 +367,7 @@
     <option value="1941">1941</option>
     <option value="1940">1940</option>
 </select>
-    <select class="form-select" id="month" name="month">
+    <select class="form-select" id="month" name="month" style="width: 80px; height: 30px; font-size: 14px">
     <option>month</option>
     <option value="01">January</option>
     <option value="02">February</option>
@@ -374,7 +382,7 @@
     <option value="11">November</option>
     <option value="12">December</option>
 </select>
-    <select class="form-select" id="day" name="day">
+    <select class="form-select" id="day" name="day" style="width: 80px; height: 30px; font-size: 14px">
     <option>day</option>
     <option value="01">01</option>
     <option value="02">02</option>
@@ -408,8 +416,9 @@
     <option value="30">30</option>
     <option value="31">31</option>
 </select></p>
-
-    <select id="gender" name="gender" aria-label="Select your gender identity">
+    <label for="gender">What is your gender? please select under.</label>
+    <p></p>
+    <select id="gender" name="gender" aria-label="Select your gender identity" style="width: 150px; height: 30px; font-size: 14px">
     <option value="">Please select</option>
     <option value="male">Male</option>
     <option value="female">Female</option>
@@ -424,9 +433,16 @@
     <option value="other">Other</option>
     <option value="self-describe">I prefer to self-describe</option>
 </select>
-    <p><input type="email" name="email" placeholder="Please Enter Your Email:" required></p>
 
-    <select class="form-select" id="phone" name="phone">
+    <p></p>
+    <label for="email">E-mail Address:</label>
+    <p><input type="email" name="email" id="email" placeholder="Please Enter Your Email:" style="width: 450px; height: 20px; font-size: 14px"required></p>
+
+    <label for="phone">What is your Phone Number?: please select your country and type your number.</label>
+
+    <p></p>
+
+    <select class="form-select" id="phone" name="phone" style="width: 210px; height: 30px; font-size: 14px">
     <option>Country Number:</option>
     <option value="93">Afghanistan +93</option>
     <option value="358">Aland Islands +358</option>
@@ -680,8 +696,11 @@
     <option value="260">Zambia +260</option>
     <option value="263">Zimbabwe +263</option>
 </select>
-    <input type="text" name="phone number" placeholder="Phone Number" required>
+    <input type="text" name="phone number" placeholder="Phone Number" style="width: 250px; height: 20px; font-size: 14px" required>
 
+    <p></p>
+
+    <input type="text" name=""
     <br><button type="submit">Submit</button>
 </form>
 {% endblock %}

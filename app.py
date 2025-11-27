@@ -29,7 +29,9 @@ def view_registrations():
 def submit_form():
     name = request.form['name']
     country = request.form['country']
-    age = request.form['age']
+    year = request.form['year']
+    month = request.form['month']
+    day = request.form['day']
     email = request.form['email']
     gender = request.form['gender']
     phone = request.form['phone']
@@ -38,8 +40,12 @@ def submit_form():
         flash('Please enter your first name.')
     elif not country:
         flash('Please enter your country.')
-    elif not age:
+    elif not year:
         flash('Please enter your age.')
+    elif not month:
+        flash('Please enter your month.')
+    elif not day:
+        flash('Please enter your day.')
     elif not email:
         flash('Please enter your email.')
     elif not gender:
@@ -60,7 +66,7 @@ def submit_form():
         data = []
 
     # Add the new registration
-    data.append({'name': name, 'country': country, 'age': age, 'email': email, 'gender': gender, 'phone': phone})
+    data.append({'name': name, 'country': country, 'year': year, 'month': month, 'day': day, 'email': email, 'gender': gender, 'phone': phone})
 
     # Save all registrations back to the file
     with open('registrations.json', 'w') as file:
